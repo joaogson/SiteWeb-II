@@ -23,4 +23,15 @@ $(function(){
         }
     })
 
+    $('[formato="data"]').mask('99/99/9999');
+
+    $('[actionBtn=delete]').click(function(){
+        let text;
+        if(confirm("Deseja excluir o registro? ") == true) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+
 })

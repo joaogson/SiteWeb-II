@@ -1,3 +1,24 @@
+<?php
+if (isset($_POST['lembrar'])) {
+    $user = $_POST['user'];
+    $password = $_POST['password'];
+    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` 
+                 WHERE user = ? AND password = ?");
+    $sql->execute(array($user, $password));
+    if ($sql->rowCount() == 1) {
+        $info = $sql->fetch();
+        $_SESSION['login'] = true;
+        $_SESSION['user'] = $user;
+        $_SESSION['password'] = $password;
+        $_SESSION['img'] = $info['img'];
+        $_SESSION['nome'] = $info['nome'];
+        $_SESSION['cargo'] = $info['cargo'];
+        header('Location: ' . INCLUDE_PATH_PAINEL);
+        die();
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en, pt-br">
 
@@ -30,19 +51,30 @@
                 $_SESSION['img'] = $info['img'];
                 $_SESSION['nome'] = $info['nome'];
                 $_SESSION['cargo'] = $info['cargo'];
+                if(isset($_POST['lembrar'])){
+                    setcookie('lembrar', true, time() + (60*60*24*30*12), '/');
+                    setcookie('user', $user, time() + (60*60*24*30*12), '/');
+                    setcookie('password', $password, time() + (60*60*24*30*12), '/');
+                }
                 header('Location: ' . INCLUDE_PATH_PAINEL);
                 die();
             } else {
                 echo '<div class="erro-box"><i class="fa-solid fa-x"></i> &nbsp Usuário ou senha incorretos!</div>';
             }
         }
-
         ?>
+
+        <img src="ifpr-login.png">
+
         <form action="" method="post">
             <input type="text" name="user" placeholder="Login" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" name="acao" value="Logar">
+            <label for="lembrar">Lembrar-me</label>
+            <input type="checkbox" name="lembrar" id="">
         </form>
+        <br>
+        <a class="voltar" href="<?php echo INCLUDE_PATH; ?>">Página Inicial</a>
     </div>
 </body>
 
