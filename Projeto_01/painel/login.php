@@ -64,7 +64,7 @@ if (isset($_POST['lembrar'])) {
         }
         ?>
 
-        <img src="ifpr-login.png">
+        <img src="uploads/ifpr.png">
 
         <form action="" method="post">
             <input type="text" name="user" placeholder="Login" required>

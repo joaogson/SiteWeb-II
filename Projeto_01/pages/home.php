@@ -1,13 +1,13 @@
  <!--banner-principal-->
  <section class="banner-principal">
-     <div style="background-image:url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide.jpg')" class="banner-single"></div>
+
+     <?php foreach ($slides as $key => $value) { 
+        ?>
+        <div style="background-image:url('<?php echo INCLUDE_PATH;?>uploads/<?php echo $value['slide']; ?>')" class="banner-single"></div>
      <!--banner-single-->
-     <div style="background-image:url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide2.jpg')" class="banner-single">
-     </div>
-     <!--banner-single-->
-     <div style="background-image:url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide3.jpg')" class="banner-single">
-     </div>
-     <!--banner-single-->
+
+     <?php }?>
+
      <div class="overlay"></div>
      <!--overlay-->
      <div class="center">
@@ -30,14 +30,8 @@
  <section class="descricao-autor">
      <div class="center">
          <div class="w50 left">
-             <h2>Prof. Dr. Robyson Aggio</h2>
-             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat similique hic ullam sed aliquid ut
-                 suscipit dolorum itaque ipsa culpa, laboriosam, autem eligendi eveniet ab. Maxime, accusantium.
-                 Quas,
-                 eos at.</p>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et nostrum minus maxime expedita porro. Vero
-                 repellendus quasi dolore, fuga porro, deleniti laboriosam, et voluptatem dignissimos blanditiis
-                 cupiditate eos aut explicabo?</p>
+             <h2><?php echo $infoSite['nome_autor']?></h2>
+             <p><?php echo $infoSite['descricao']?></p>
          </div>
          <div class="w50 left">
              <img src="<?php echo INCLUDE_PATH; ?>assets/img/local-trabalho.png" alt="Local de trabalho">
@@ -55,24 +49,17 @@
          <h2 class="title">Especialidades</h2>
          <div class="w33 left box-especialidades">
              <h3><i class="fa-brands fa-html5"></i></h3>
-             <h3>HTML 5</h3>
-             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In maiores quae dolor consequatur, at
-                 nostrum voluptatum exercitationem fuga itaque vero eius commodi rerum esse cupiditate nisi
-                 laboriosam dolore quia dicta!</p>
+             <h3><?php echo $infoSite['icone1'] ?></h3>
+             <p><?php echo $infoSite['descricao1'] ?></p>
          </div>
          <div class="w33 left box-especialidades">
              <h3><i class="fa-brands fa-css3"></i></h3>
-             <h3>CSS 3</h3>
-             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In maiores quae dolor consequatur, at
-                 nostrum voluptatum exercitationem fuga itaque vero eius commodi rerum esse cupiditate nisi
-                 laboriosam dolore quia dicta!</p>
+             <h3><?php echo $infoSite['icone2'] ?></h3>
+             <p><?php echo $infoSite['descricao2'] ?></p>
          </div>
          <div class="w33 left box-especialidades">
-             <h3><i class="fa-brands fa-js"></i></h3>
-             <h3>JavaScript</h3>
-             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In maiores quae dolor consequatur, at
-                 nostrum voluptatum exercitationem fuga itaque vero eius commodi rerum esse cupiditate nisi
-                 laboriosam dolore quia dicta!</p>
+             <h3><?php echo $infoSite['icone3'] ?></h3>
+             <p><?php echo $infoSite['descricao3'] ?></p>
          </div>
          <div class="clear"></div>
          <!--clear float-->
@@ -93,33 +80,30 @@
                 $depoimentos = $sql->fetchAll();
                 foreach ($depoimentos as $key => $value) {
                     ?>
-                    <div class="depoimentos-single">
-                        <p class="depoimentos-descricao">
-                            <?php echo $value['depoimento']; ?>
-                    </p>
-                    <p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
-                    </div><!-- depoimento-single -->
-                    <?php } ?>
+             <div class="depoimentos-single">
+                 <p class="depoimentos-descricao">
+                     <?php echo $value['depoimento']; ?>
+                 </p>
+                 <p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
+             </div><!-- depoimento-single -->
+             <?php } ?>
          </div><!-- depoimentos -->
          <div id="servicos" class="w50 left servicos-container">
              <h2 class="title">Serviços</h2>
              <div class="servicos">
+                 <?php 
+
+                    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.servicos`
+                                                        ORDER BY order_id DESC LIMIT 3");
+                    $sql->execute();
+                    $servicos = $sql->fetchAll();
+                 ?>
                  <ul>
+                     <?php foreach($servicos as $key => $value){ ?>
                      <li>
-                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste culpa maxime eum, doloribus
-                         rerum odit possimus provident hic quisquam perspiciatis ipsum explicabo officia tempore vero
-                         nam nulla consectetur maiores minus!
+                         <?php echo $value['servico'];?>
                      </li>
-                     <li>
-                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit veritatis autem est libero
-                         nisi praesentium saepe architecto earum nulla nobis qui, quasi corporis perferendis
-                         voluptates ducimus cupiditate officia totam unde.
-                     </li>
-                     <li>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi ullam distinctio
-                         repellendus ducimus. Ipsum nulla ducimus autem, rem nobis illo dolores nam placeat
-                         distinctio, eius soluta repudiandae accusantium atque!
-                     </li>
+                     <?php } ?>
                  </ul>
              </div>
          </div>

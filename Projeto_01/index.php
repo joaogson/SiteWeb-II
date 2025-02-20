@@ -2,6 +2,11 @@
 <?php Site::updateUserOnline();?>
 <?php Site::countUser();?>
 
+<?php 
+$infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_admin.config`");
+$infoSite->execute();
+$infoSite = $infoSite->fetch();
+?>
 <!DOCTYPE html>
 <!--Idiomas-->
 <html lang="en, pt-br">
@@ -33,7 +38,7 @@
     <link rel="shortcut icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon">
 
     <!--Título do site-->
-    <title>IFPR</title>
+    <title><?php echo $infoSite['titulo'];?></title>
 </head>
 
 <body>
