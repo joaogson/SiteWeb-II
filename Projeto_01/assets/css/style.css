@@ -1,403 +1,546 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
 }
 
 /*Boot Css*/
 html, body{
-    overflow-x: hidden;
-    height: 100%;
+	overflow-x: hidden;
+	height: 100%;
 }
 
-.center {
-    max-width: 1280px;
-    padding: 0 2%;
-    margin: 0 auto;
+.text-center{
+	text-align: center;
+	margin-top: 10px;
+}
+
+center {
+	max-width: 1280px;
+	padding: 0 2%;
+	margin: 0 auto;
 }
 
 img{
-    width: 100%;
+	width: 100%;
 }
 
 .w50 {
-    padding: 0 1%;
-    width: 50%;
+	padding: 0 1%;
+	width: 50%;
 }
 
 .w33 {
-    padding: 0 1%;
-    width: 33%;
+	padding: 0 1%;
+	width: 33%;
 }
 
 .left {
-    float: left;
+	float: left;
 }
 
 .right {
-    float: right;
+	float: right;
 }
 
 .clear {
-    clear: both;
+	clear: both;
 }
 
 /*Estilização do Site*/
 
 /*header*/
 header {
-    background-color: rgb(75, 221, 75);
-    padding: 20px 0;
+	background-color: rgb(75, 221, 75);
+	padding: 20px 0;
 }
 
 header .logo{
-    width: 30px;
-    height: 30px;
+	width: 30px;
+	height: 30px;
 }
 
 .mobile {
-    display: none; /*remover o menu do mobile*/
+	display: none; /*remover o menu do mobile*/
 }
 
 nav.desktop ul {
-    list-style-type: none; /*tirar os círculos*/
+	list-style-type: none; /*tirar os círculos*/
 }
 
 nav.desktop li {
-    text-transform: uppercase; /*Tudo para Maíusculo*/
-    display: inline-block; /*Alinhar na horizontal*/
-    padding: 0 20px; /*Espaçamento interno*/
+	text-transform: uppercase; /*Tudo para Maíusculo*/
+	display: inline-block; /*Alinhar na horizontal*/
+	padding: 0 20px; /*Espaçamento interno*/
 }
 
 nav.desktop a{
-    color: white; /*cor da fonte branca*/
-    text-decoration: none; /*remover o sublinhado*/
+	color: white; /*cor da fonte branca*/
+	text-decoration: none; /*remover o sublinhado*/
 }
 
 /*banner-principal*/
 section.banner-principal{
-    width: 100%; /*Largura de 100%*/
-    height: 600px;/*Altura de 600px*/
-    position: relative; /*Posição relativa*/
+	width: 100%; /*Largura de 100%*/
+	height: 600px;/*Altura de 600px*/
+	position: relative; /*Posição relativa*/
 }
 
 .banner-single{
-    z-index: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+	z-index: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
 }
 
 section .overlay{
-    z-index: 1; /*Posição de prioridade na tela*/
-    left: 0; /*Fixando na esquerda*/
-    top: 0; /*Fixando no top*/
-    width: 100%; /*Largura de 100%*/
-    height: 100%; /*Altura de 100%*/
-    background-color: rgba(20, 20, 20, 0.5);/*Cor de fundo*/
-    position: absolute; /*Posição absoluta*/
+	z-index: 1; /*Posição de prioridade na tela*/
+	left: 0; /*Fixando na esquerda*/
+	top: 0; /*Fixando no top*/
+	width: 100%; /*Largura de 100%*/
+	height: 100%; /*Altura de 100%*/
+	background-color: rgba(20, 20, 20, 0.5);/*Cor de fundo*/
+	position: absolute; /*Posição absoluta*/
 }
 
 .bullets{
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 10px;
+	position: absolute;
+	z-index: 4;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 10px;
 }
 
 .bullets span{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	border-radius: 50%;
+	background-color: white;
+	cursor: pointer;
 }
 
 .bullets span.active-slider{
-    background-color: rgb(75, 221, 75);
+	background-color: rgb(75, 221, 75);
 }
 
 section.banner-principal form{
-    z-index: 2; /*Posição de priotidade na tela*/
-    width: 98%;
-    max-width: 600px; /*Largura máxima*/
-    position: absolute; /*Posição absoluta*/
-    left: 50%; /*50% a esquerda*/
-    top: 50%; /*50% a cima*/
-    transform: translate(-50%,-50%);/*Centralizar*/
-    -ms-transform: translate(-50%,-50%); /*Centralizar*/
+	z-index: 2; /*Posição de priotidade na tela*/
+	width: 98%;
+	max-width: 600px; /*Largura máxima*/
+	position: absolute; /*Posição absoluta*/
+	left: 50%; /*50% a esquerda*/
+	top: 50%; /*50% a cima*/
+	transform: translate(-50%,-50%);/*Centralizar*/
+	-ms-transform: translate(-50%,-50%); /*Centralizar*/
 }
 
 section.banner-principal form h2{
-    color: white; /*Cor da fonte*/
-    font-size: 32px; /*Tamanho da fonte*/
-    text-align: center; /*Alinhamento no centro*/
+	color: white; /*Cor da fonte*/
+	font-size: 32px; /*Tamanho da fonte*/
+	text-align: center; /*Alinhamento no centro*/
 }
 
 section.banner-principal form input[type=email]{
-    width: 100%; /*Largura de 100%*/
-    height: 50px; /*Altura de 50px*/
-    margin-top: 10px; /*Margin top*/
-    background-color: white; /*Cor do fundo*/
-    color: black; /*Cor da fonte*/
-    font-size: 24px; /*Tamanho da fonte*/
-    padding-left: 10px; /*Espaçamento interno esquerdo*/
-    border: 1px solid green; /*Borda*/
+	width: 100%; /*Largura de 100%*/
+	height: 50px; /*Altura de 50px*/
+	margin-top: 10px; /*Margin top*/
+	background-color: white; /*Cor do fundo*/
+	color: black; /*Cor da fonte*/
+	font-size: 24px; /*Tamanho da fonte*/
+	padding-left: 10px; /*Espaçamento interno esquerdo*/
+	border: 1px solid green; /*Borda*/
 }
 
 section.banner-principal form input[type=submit]{
-    width: 100%; /*Largura de 100%*/
-    height: 50px; /*Altura de 50px*/
-    margin-top: 10px; /*Margin top*/
-    background-color: rgb(75, 221, 75); /*Cor de fundo*/
-    color: white; /*Cor da fonte*/
-    font-size: 24px; /*Tamanho da fonte*/
-    cursor: pointer; /*Tipo do cursor do mouse*/
+	width: 100%; /*Largura de 100%*/
+	height: 50px; /*Altura de 50px*/
+	margin-top: 10px; /*Margin top*/
+	background-color: rgb(75, 221, 75); /*Cor de fundo*/
+	color: white; /*Cor da fonte*/
+	font-size: 24px; /*Tamanho da fonte*/
+	cursor: pointer; /*Tipo do cursor do mouse*/
 }
 
 /*descricao-autor*/
 section.descricao-autor{
-    padding: 30px 0; /*Espaçamento interno cima e baixo*/
+	padding: 30px 0; /*Espaçamento interno cima e baixo*/
 }
 
 section.descricao-autor h2{
-    font-size: 32px; /*Tamanho da fonte*/
+	font-size: 32px; /*Tamanho da fonte*/
+}
+
+section.descricao-autor img{
+	width: 150px;
+	height: 150px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
 }
 
 section.descricao-autor p{
-    margin-top: 10px; /*Espaçamento externo cima*/
-    font-size: 18px; /*Tamanho da fonte*/
-    text-align: justify; /*Alinhamento justificado*/
+	margin-top: 10px; /*Espaçamento externo cima*/
+	font-size: 18px; /*Tamanho da fonte*/
+	text-align: justify; /*Alinhamento justificado*/
 }
 
 /*especialidades*/
 section.especialidades{
-    text-align: center; /*Alinhamento no centro*/
-    font-size: 18px; /*Tamanho da fonte*/
-    padding: 20px 0; /*Espaçamento interno*/
-    background-color: rgb(117, 243, 117); /*Cor Fundo*/
+	text-align: center; /*Alinhamento no centro*/
+	font-size: 18px; /*Tamanho da fonte*/
+	padding: 20px 0; /*Espaçamento interno*/
+	background-color: rgb(117, 243, 117); /*Cor Fundo*/
 }
 
 section.especialidades .title{
-    font-size: 40px; /*Tamanho da fonte*/
+	font-size: 40px; /*Tamanho da fonte*/
 }
 
 .box-especialidades{
-    margin: 20px 0;   /*Espaçamento externo*/
+	margin: 20px 0;   /*Espaçamento externo*/
 }
 
 .box-especialidades h3 i{
-    font-size: 100px; /*Tamanho da fonte*/
-    
+	font-size: 100px; /*Tamanho da fonte*/
+	
 }
 
 .box-especialidades p{
-    margin-top: 10px; /*Margem superior*/
+	margin-top: 10px; /*Margem superior*/
 }
 
 /*Extras*/
 section.extras{
-    padding: 20px 0; /*Espaçamento interno*/
-    background-color: rgb(214, 250, 214); /*Cor fundo*/
+	padding: 20px 0; /*Espaçamento interno*/
+	background-color: rgb(214, 250, 214); /*Cor fundo*/
 }
 
 .depoimentos-container, .servicos-container{
-    padding: 10px 2%; /*Espaçamento interno*/
+	padding: 10px 2%; /*Espaçamento interno*/
 }
 
 section.extras .title{
-    font-size: 32px; /*Tamanho da fonte*/
-    text-align: center; /*Alinhamento centro*/
-    padding-bottom: 10px; /*Espaçamento interno baixo*/
+	font-size: 32px; /*Tamanho da fonte*/
+	text-align: center; /*Alinhamento centro*/
+	padding-bottom: 10px; /*Espaçamento interno baixo*/
 }
 
 section.extras .depoimento-single{
-    padding: 10px 0; /*Espaçamento interno*/
-    border-bottom: 2px solid black; /*Bordar embaixo*/
+	padding: 10px 0; /*Espaçamento interno*/
+	border-bottom: 2px solid black; /*Bordar embaixo*/
 }
 
 p.depoimento-descricao{
-    font-size: 18px; /*Tamanho da fonte*/
+	font-size: 18px; /*Tamanho da fonte*/
 }
 
 p.nome-autor{
-    color: red; /*Cor da fonte*/
-    font-weight: bold; /*Negrito*/
+	color: red; /*Cor da fonte*/
+	font-weight: bold; /*Negrito*/
 }
 
 .servicos ul{
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
 .servicos li{
-    font-size: 18px;
-    margin-top: 10px;
+	font-size: 18px;
+	margin-top: 10px;
 }
 
 .btnWhatsApp{
-    z-index: 999;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 30px;
-    right: 30px;
-    background-color: rgb(75, 221, 75);
-    color: white;
-    border-radius: 30px;
-    text-align: center;
-    font-size: 35px;
-    box-shadow: 10px 10px 10px black;
-    animation-name: whatsApp;
-    animation-duration: 6s;
-    animation-iteration-count: 3;
+	z-index: 999;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	bottom: 30px;
+	right: 30px;
+	background-color: rgb(75, 221, 75);
+	color: white;
+	border-radius: 30px;
+	text-align: center;
+	font-size: 35px;
+	box-shadow: 10px 10px 10px black;
+	animation-name: whatsApp;
+	animation-duration: 6s;
+	animation-iteration-count: 3;
 }
 
 @keyframes whatsApp{
-    from{background-color:rgb(75, 221, 75);}
-    to{background-color: black;}
+	from{background-color:rgb(75, 221, 75);}
+	to{background-color: black;}
 
-    from{font-size: 5px;}
-    to{font-size: 35px;}
+	from{font-size: 5px;}
+	to{font-size: 35px;}
 
-    from{width: 5px;}
-    to{width: 50px;}
+	from{width: 5px;}
+	to{width: 50px;}
 
-    from{height: 5px;}
-    to{height: 50px;}
+	from{height: 5px;}
+	to{height: 50px;}
 }
 
 /*footer*/
 footer{
-    background-color: rgb(75, 221, 75);
-    padding: 10px;
-    text-align: center;
-    color: black;
-    font-weight: bold;
+	background-color: rgb(75, 221, 75);
+	padding: 10px;
+	text-align: center;
+	color: black;
+	font-weight: bold;
 }
 
 footer.fixed{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 section.erro-404{
-    padding: 100px;
-    min-height: 500px;
-    font-size: 24px;
+	padding: 100px;
+	min-height: 500px;
+	font-size: 24px;
 }
 
 section.erro-404 i{
-    padding: 0 10px;
+	padding: 0 10px;
 }
 
 section.erro-404 h2{
-    text-align: center;
-    border-bottom: 2px solid #000 ;
+	text-align: center;
+	border-bottom: 2px solid #000 ;
 }
 
 section.erro-404 a{
-    color: rgb(75, 221, 75);
+	color: rgb(75, 221, 75);
 }
 
 /*contato.php*/
 .contato-container{
-    display: block;
-    max-width: 800px;
-    margin: 20px auto;
+	display: block;
+	max-width: 800px;
+	margin: 20px auto;
 }
 
 .contato-container input[type="text"]{
-    width: 100%;
-    margin: 6px 0;
-    padding: 8px;
-    font-size: 18px;
+	width: 100%;
+	margin: 6px 0;
+	padding: 8px;
+	font-size: 18px;
 }
 
 .contato-container textarea{
-    width: 100%;
-    margin: 6px 0;
-    padding: 8px;
-    font-size: 18px;
-    min-height: 120px;
-    resize: vertical;
+	width: 100%;
+	margin: 6px 0;
+	padding: 8px;
+	font-size: 18px;
+	min-height: 120px;
+	resize: vertical;
 }
 
 .contato-container input[type="submit"]{
-    width: 100%;
-    margin: 6px 0;
-    padding: 8px;
-    font-size: 18px;
-    background-color: rgb(75, 221, 75);
-    color: white;
-    cursor: pointer ;
+	width: 100%;
+	margin: 6px 0;
+	padding: 8px;
+	font-size: 18px;
+	background-color: rgb(75, 221, 75);
+	color: white;
+	cursor: pointer ;
 }
 
 .map iframe{
-    width: 100%;
-    height: 400px;
+	width: 100%;
+	height: 400px;
 }
+
+.header-noticias {
+	width: 100%;
+	padding: 40px 0;
+	background-color: rgb(117, 243, 117);
+	box-shadow: 5px 5px 10px rgb(75, 221, 75);;
+}
+
+.header-noticias h2:nth-of-type(1){
+	font-size: 42px;
+}
+
+.header-noticias h2{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	border-radius: 10px;
+}
+
+section.container-portal{
+	padding: 50px 0;
+}
+
+.sidebar{
+	float: left;
+	width: 22%;
+}
+
+.box-content-sidebar{
+	width: 100%;
+	background-color: rgb(75, 221, 75);
+	padding: 15px;
+	color: white;
+	box-shadow: 5px 5px 10px rgb(75, 221, 75);
+	margin-bottom: 30px;
+	border-radius: 10px;
+}
+
+.box-content-sidebar h3{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.box-content-sidebar input[type="text"],
+.box-content-sidebar select{
+	width: 100%;
+	height: 40px;
+	border: 1px solid black;
+	font-size: 18px;
+	padding-left: 8px;
+	margin-top: 10px;
+	box-shadow: 5px 5px 10px black;
+}
+
+.box-content-sidebar input[type="submit"]{
+	width: 100%;
+	height: 40px;
+	color: white;
+	background-color: black;
+	font-size: 18px;
+	margin-top: 10px;
+	cursor: pointer;
+	box-shadow: 5px 5px 10px black;
+}
+
+.conteudo-portal{
+	float: right;
+	width: 76%;
+	padding: 0 2%;
+	text-align: center;
+}
+
+.header-conteudo-portal{
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.header-conteudo-portal h2{
+	font: 22px;
+	font-weight: normal;
+}
+
+.header-conteudo-portal h2>span{
+	border-bottom: 5px solid black;
+	font-weight: bold;
+}
+
+.bonx-single-conteudo{
+	float: left;
+	width: 31%;
+	background-color: black;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 5px 5px 10px black;
+	color: white;
+	border-radius: 10px;
+}
+
+.bonx-single-conteudoh2{
+	padding-bottom: 20px;
+}
+
+.bonx-single-conteudo a{
+	color: rgb(75, 221, 75);
+	text-decoration: none;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.paginator{
+	text-align: center;
+}
+
+.paginator a{
+	display: inline-block;
+	padding: 10px 2px;
+	margin: 10px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	width: 25px;
+	text-decoration: none;
+}
+
+.paginator a.active-page{
+	background-color: black;
+	color: white;
+}
+
 
 /*@media screen -> Mobile*/
 @media screen and (max-width: 768px){   
-    img{
-        display: block; /*Display na vertical*/
-        margin: 0 auto; /*Centralizando*/
-        max-width: 600px; /*Largura máxima*/
-    }
+	img{
+		display: block; /*Display na vertical*/
+		margin: 0 auto; /*Centralizando*/
+		max-width: 600px; /*Largura máxima*/
+	}
 
-    .w50{
-        padding: 10px; /*Espaçamento interno*/
-        width: 100%; /*Largura de 100%*/
-    }
+	.w50{
+		padding: 10px; /*Espaçamento interno*/
+		width: 100%; /*Largura de 100%*/
+	}
 
-    nav.desktop{
-        display: none; /*Escondendo o menu desktop*/
-    }
+	nav.desktop{
+		display: none; /*Escondendo o menu desktop*/
+	}
 
-    nav.mobile{
-        display: block; /*Mostrando o menu mobile - bars*/
-        color: white; /*Cor da fonte*/
-        font-size: 24px; /*Tamanho da fonte*/
-        cursor: pointer; /*Cursor do mouse*/
-    }
+	nav.mobile{
+		display: block; /*Mostrando o menu mobile - bars*/
+		color: white; /*Cor da fonte*/
+		font-size: 24px; /*Tamanho da fonte*/
+		cursor: pointer; /*Cursor do mouse*/
+	}
 
-    nav.mobile ul{
-        margin-top: 10px; /*Margem top*/
-        z-index: 3; /*Prioridade*/
-        position: absolute; /*Posição absoluta*/
-        left: 0; /*Início na esquerda*/
-        width: 100%; /*Largura de 100%*/
-        background-color: black; /*Cor de fundo*/
-        text-align: center; /*Alinhamento centro*/
-        display: none; /*Esconder o menu mobile*/
-    }
+	nav.mobile ul{
+		margin-top: 10px; /*Margem top*/
+		z-index: 3; /*Prioridade*/
+		position: absolute; /*Posição absoluta*/
+		left: 0; /*Início na esquerda*/
+		width: 100%; /*Largura de 100%*/
+		background-color: black; /*Cor de fundo*/
+		text-align: center; /*Alinhamento centro*/
+		display: none; /*Esconder o menu mobile*/
+	}
 
-    nav.mobile li{
-        display: block; /*Display block*/
-        list-style-type: none;/*Tirando os marcadores*/
-        width: 100%; /*Largura de 100%*/
-        padding: 10px; /*Esáçamento interno*/
-        border-bottom: 1px solid white; /*Borda baixo*/
-        border-top: 1px solid white; /*Borda cima*/
-    }
+	nav.mobile li{
+		display: block; /*Display block*/
+		list-style-type: none;/*Tirando os marcadores*/
+		width: 100%; /*Largura de 100%*/
+		padding: 10px; /*Esáçamento interno*/
+		border-bottom: 1px solid white; /*Borda baixo*/
+		border-top: 1px solid white; /*Borda cima*/
+	}
 
-    nav.mobile li a{
-        text-decoration: none; /*Tirando o sublinhado*/
-        color: white; /*Cor da fonte*/
-        font-size: 22px; /*Tamanho da fonte*/
-    }
+	nav.mobile li a{
+		text-decoration: none; /*Tirando o sublinhado*/
+		color: white; /*Cor da fonte*/
+		font-size: 22px; /*Tamanho da fonte*/
+	}
 
-    .w33{
-        width: 100%;
-        padding: 10px;
-    }
+	.w33{
+		width: 100%;
+		padding: 10px;
+	}
 }
